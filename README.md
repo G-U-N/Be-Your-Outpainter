@@ -14,6 +14,7 @@ https://github.com/G-U-N/Be-Your-Outpainter/assets/60997859/9c10fde7-c881-4dd6-8
 conda env create -f environment.yml
 ```
 2. Downloads
+
 Download the models folder from Huggingface.
 
 ```shell
