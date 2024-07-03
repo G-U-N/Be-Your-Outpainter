@@ -29,3 +29,12 @@ Check the outpainted results from the `results' folder.
 
 
 
+### Cite
+```bibtex
+@article{wang2024your,
+  title={Be-Your-Outpainter: Mastering Video Outpainting through Input-Specific Adaptation},
+  author={Wang, Fu-Yun and Wu, Xiaoshi and Huang, Zhaoyang and Shi, Xiaoyu and Shen, Dazhong and Song, Guanglu and Liu, Yu and Li, Hongsheng},
+  journal={arXiv preprint arXiv:2403.13745},
+  year={2024}
+}
+```
