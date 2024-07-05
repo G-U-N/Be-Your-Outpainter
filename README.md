@@ -21,7 +21,7 @@ Download the models folder from Huggingface.
 git clone https://huggingface.co/wangfuyun/Be-Your-Outpainter
 ```
 
-3. Run the code for basic testing. Single GPU with 20GB memory is required for current code version.
+3. Run the code for basic testing. Single GPU with 20GB memory is required for current code version. Reduce the video length if GPU memory is limited.
 
 ```shell
 bash run.sh
