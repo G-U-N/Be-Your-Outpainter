@@ -761,6 +761,3 @@ if __name__ == "__main__":
             main(base_config, config)
             max_memory_allocated = torch.cuda.max_memory_allocated() / (1024**3)
             print(f"max memory allocated: {max_memory_allocated:.3f} GB.")
-"""
-Tuning 需要tuning一些有意思的模块，听起来很有效且straight forward的东西。
-"""
