@@ -28,7 +28,71 @@ bash run.sh
 ```
 Check the outpainted results from the `results' folder.
 
+### Outpaint Your Own Videos
+Edit the [exp.yaml](https://github.com/G-U-N/Be-Your-Outpainter/blob/master/configs/exp.yaml) to outpaint your own videos.
+```yaml
+exp: # Name of your task
 
+  train_data:
+    video_path: "data/outpaint_videos/SB_Dog1.mp4"                            # source video path
+    prompt: "a cute dog, garden, flowers"                                     # source video prompts for tuning
+    n_sample_frames: 16                                                       # source video length
+    width: 256                                                                # source video width
+    height: 256                                                               # source video height
+    sample_start_idx: 0                                                       # set to 0 by default. Sampling frames from the beginning of the video
+    sample_frame_rate: 1                                                      # fps of video 
+  
+  validation_data:
+    prompts:
+      - "a cute dog, garden, flowers"                                         # prompts applied for outpainting. 
+    prompts_l:
+      - "wall"
+    prompts_r:
+      - "wall"
+    prompts_t:
+      - ""
+    prompts_b:
+      - ""
+
+    prompts_neg:
+      - ""
+
+
+    is_grid: False                                                            # set as True to enable prompts_r, prompts_l, prompts_t, prompts_b 
+    video_length: 16                                                          # video length. The same as in the train_data config
+    width: 256
+    height: 256
+
+    scale_l: 0
+    scale_r: 0
+    scale_t: 0.5                                                              # How to expand the video field. For a 512x512 source video. Set scale_l and scale_r to 0.5, and it will generate 512x(512 + 512 * 0.5 + 512 * 0.5) = 512 x 1024 video.
+    scale_b: 0.5
+
+    window_size: 16                                                           # only used in longer video outpainting
+    stride: 4
+
+
+    repeat_time: 0                                                            # set to 4 enable noise regret
+    jump_length: 3
+
+    num_inference_steps: 50                                                   # inference steps for outpainting
+    guidance_scale: 7.5             
+
+
+    bwd_mask: null                                                            # not applied
+    fwd_mask: null
+    bwd_flow: null
+    fwd_flow: null
+
+    warp_step: [0,0.5]
+    warp_time: 3
+
+  mask_config:                                                                # how to set mask for tuning
+    mask_l: [0., 0.4]
+    mask_r: [0., 0.4]
+    mask_t: [0., 0.4]
+    mask_b: [0., 0.4]
+```
 
 ### Cite
 ```bibtex
