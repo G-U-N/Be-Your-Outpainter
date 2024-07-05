@@ -754,7 +754,6 @@ if __name__ == "__main__":
             # try:
             # main(base_config, config)
             # except Exception as e:
-            # 异常发生时的处理
             # print(f"An exception occurred: {e}")
             # print("fail at",key)
 
