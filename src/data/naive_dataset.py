@@ -107,6 +107,7 @@ class TuneAVideoDatasetSplit(Dataset):
         )
         self.len_video = len(self.sample_index)
         self.len_video = min(self.len_video, MAX_LEN)
+        self.len_video = self.len_video - self.len_video % self.n_sample_frames
         self.sample_index = self.sample_index[: self.len_video]
         self.full_video = self.full_video[: self.len_video]
         self.len_dataset = self.len_video - self.n_sample_frames + 1

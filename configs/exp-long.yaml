@@ -1,0 +1,131 @@
+dirt-road-driving:
+
+  train_data:
+    video_path: "data/outpaint_videos/dirt-road-driving.mp4"
+    prompt: "a car is running on the road."
+    n_sample_frames: 16
+    width: 256
+    height: 256
+    sample_start_idx: 0
+    sample_frame_rate: 2
+
+  validation_data:
+    prompts:
+      - "a car is running on the road."
+    prompts_l:
+      - "wall"
+    prompts_r:
+      - "wall"
+    prompts_t:
+      - ""
+    prompts_b:
+      - ""
+
+    prompts_neg:
+      - “”
+
+
+
+    is_grid: False
+    video_length: null
+    width: 256
+    height: 256
+
+    scale_l: 0.5
+    scale_r: 0.5
+    scale_t: 0.0
+    scale_b: 0.0
+
+    window_size: 16 
+    stride: 4
+
+
+    repeat_time: 0
+    jump_length: 3
+
+    num_inference_steps: 25
+    guidance_scale: 7.5
+
+
+    bwd_mask: null
+    fwd_mask: null
+    bwd_flow: null
+    fwd_flow: null
+
+    warp_step: [0,0.5]
+    warp_time: 3
+
+  mask_config:
+    mask_l: [0., 0.4]
+    mask_r: [0., 0.4]
+    mask_t: [0., 0.4]
+    mask_b: [0., 0.4]
+
+
+
+
+dirt-road-driving-1024p:
+
+  train_data:
+    video_path: "data/outpaint_videos/dirt-road-driving.mp4"
+    prompt: "a car is running on the road."
+    n_sample_frames: 16
+    width: 512
+    height: 512
+    sample_start_idx: 0
+    sample_frame_rate: 3
+
+  validation_data:
+    prompts:
+      - "a car is running on the road."
+    prompts_l:
+      - "wall"
+    prompts_r:
+      - "wall"
+    prompts_t:
+      - ""
+    prompts_b:
+      - ""
+
+    prompts_neg:
+      - “”
+
+
+
+    is_grid: False
+    video_length: null
+    width: 512
+    height: 512
+
+    scale_l: 0.5
+    scale_r: 0.5
+    scale_t: 0.0
+    scale_b: 0.0
+
+    window_size: 16 
+    stride: 4
+
+
+    repeat_time: 0
+    jump_length: 3
+
+    num_inference_steps: 25
+    guidance_scale: 7.5
+
+
+    bwd_mask: null
+    fwd_mask: null
+    bwd_flow: null
+    fwd_flow: null
+
+    warp_step: [0,0.5]
+    warp_time: 3
+
+  mask_config:
+    mask_l: [0., 0.4]
+    mask_r: [0., 0.4]
+    mask_t: [0., 0.4]
+    mask_b: [0., 0.4]
+
+
+

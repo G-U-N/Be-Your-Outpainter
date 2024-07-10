@@ -751,7 +751,7 @@ class OutpaintPipeline(DiffusionPipeline):
                 values_tot = torch.zeros_like(latents)
                 counts_tot = torch.zeros_like(latents)
                 t = timesteps[i]
-                seqs = [list(range(video_length))]
+                seqs = get_views(video_length, window_size, stride)
                 for idx, seq in enumerate(seqs):
 
                     latent_model_input = (
@@ -931,3 +931,13 @@ class OutpaintPipeline(DiffusionPipeline):
             return video
 
         return OutpaintPipelineOutput(videos=video)
+
+
+def get_views(video_length, window_size=16, stride=4):
+    num_blocks_time = (video_length - window_size) // stride + 1
+    views = []
+    for i in range(num_blocks_time):
+        t_start = int(i * stride)
+        t_end = t_start + window_size
+        views.append(list(range(t_start,t_end)))
+    return views
