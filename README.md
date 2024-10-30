@@ -94,6 +94,13 @@ exp: # Name of your task
     mask_b: [0., 0.4]
 ```
 
+### Evaluation
+Please check [metric.py](https://github.com/G-U-N/Be-Your-Outpainter/blob/master/src/utils/metrics.py).
+
+Important notes:
+- The metrics are reported as the average value of the settings with mask ratio 0.25 and mask ratio 0.66. For example, if the PSNR of mask ratio 0.25 is 30 and the PSNR of the mask ratio 0.66 is 20, and then the reported PSNR is (20+30)/2 = 25.
+- The VAE might suffer from decoding losses. We replace the known region with the GT for evaluation.
+
 ### Cite
 ```bibtex
 @article{wang2024your,
